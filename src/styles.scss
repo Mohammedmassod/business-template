@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+﻿/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -26,4 +26,51 @@ body {
 .dark-mode button {
     background: #61dafb !important;
     color: #1e1e2d !important;
+}
+/* تنسيق عام للصفحة */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    display: flex; /* استخدام Flexbox لتوزيع العناصر */
+    height: calc(100vh - 100px); /* خصص ارتفاع الحاوية ليكون 100% من ارتفاع الشاشة مع خصم ارتفاع navbar و footer */
+}
+
+/* تنسيق الشريط الجانبي */
+app-sidebar {
+    width: 250px; /* عرض الشريط الجانبي */
+    background-color: #343a40; /* لون خلفية الشريط الجانبي */
+    color: white;
+}
+
+/* تنسيق منطقة المحتوى */
+.content {
+    flex: 1; /* السماح لمنطقة المحتوى بالتمدد لملء المساحة المتاحة */
+    display: flex; /* استخدام Flexbox داخل منطقة المحتوى */
+    justify-content: center; /* مركز المحتوى أفقياً */
+    align-items: center; /* مركز المحتوى عمودياً */
+    background-color: #f8f9fa; /* لون خلفية منطقة المحتوى */
+    padding: 20px; /* إضافة مساحة داخلية */
+}
+
+/* تنسيق footer */
+app-footer {
+    height: 100px; /* ارتفاع footer */
+    background-color: #343a40; /* لون خلفية footer */
+    color: white;
+    text-align: center; /* مركز النص */
+    padding: 10px 0; /* إضافة مساحة داخلية */
+}
+
+/* تنسيق المحتوى داخل <router-outlet> */
+router-outlet {
+    width: 100%; /* ليكون عرض كامل */
+    display: flex; /* استخدام Flexbox */
+    justify-content: center; /* مركز المحتوى أفقياً */
+    align-items: center; /* مركز المحتوى عمودياً */
 }
