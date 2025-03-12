@@ -1,0 +1,94 @@
+.sidebar {
+  background-color: #343a40; // لون خلفية الشريط الجانبي
+  color: white;
+  padding: 1rem;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); // تأثير الظل
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; // تأثيرات سلسة
+  // تحسين التصميم عند التحويم
+  &:hover {
+    width: 270px;
+    background-color: #2c2f33; // تغيير الخلفية عند التحويم
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 1rem 0;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+
+        i {
+          margin-right: 10px; // إضافة أيقونة مع الهامش
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          color: #ffdd57;
+          padding-left: 15px; // تحريك النص عند التحويم
+          background-color: rgba(255, 221, 87, 0.2); // تأثير خلفية شفافة
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); // تأثير ظل
+        }
+      }
+    }
+  }
+  // زر إغلاق القائمة في الأجهزة الصغيرة
+  .sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffdd57;
+    }
+  }
+  // تحسينات للشاشات الصغيرة
+  @media (max-width: 768px) {
+    width: 200px;
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    .sidebar-toggle {
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    ul {
+      display: none; // إخفاء القائمة بشكل افتراضي
+    }
+
+    &.active {
+      ul {
+        display: block;
+      }
+    }
+  }
+}

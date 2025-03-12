@@ -1,0 +1,22 @@
+footer {
+  background-color: #f8f9fa;
+  color: #212529;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); // تأثير الظل
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #007bff; // تغيير اللون عند التحويم
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
+}
